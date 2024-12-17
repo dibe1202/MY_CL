@@ -3525,72 +3525,102 @@ uxEventBits 是当前比特位的情况。
 //    int value;
 //    struct node_t * next;
 //}NODE_T,* linklist;
-struct node_t{
-    int value;
-    struct node_t * next;
-};
-typedef struct node_t NODE_T;
-typedef struct node_t * linklist;
-linklist create_list(int a[],int n){
-    /*产生一个头节点*/
-    linklist head = (linklist)malloc(sizeof(NODE_T));
-    linklist p = head;
-    int i = 0;
-    for(i = 0;i<n;i++){ //产生 n个有效节点。
-        p->next = (linklist)malloc(sizeof(NODE_T));
-        p= p->next;
-        p->value = a[i];//处理数据域。
-        p->next= NULL;//确保尾节点指针域为空。
-    }
-    return head;
-}
-void tranverse_linklist(linklist h){
-    while(h->next){
-        h = h->next;
-        printf("%d ",h->value);
-    }
-}
-void release_ist(linklist  h){
-    while(h->next){
-        linklist q = h->next;
-        /*拆下来首节点*/
-        h->next = h->next->next;
-        free(q);
-    }
-    free(h);//干掉头节点。
-}
-void add_one_data(linklist head) {
-    int value = 0;
-    printf("请输入您要插入的数。");
-    scanf("%d",&value);
-    while(head->next){
-        if(head->next->value > value){
-            break;
-        }else{
-            head = head->next;
-        }
-    }
-    if(!head->next){//正常循环完毕，没有一个比这个数大。
-        head->next = (linklist)malloc(sizeof(NODE_T));
-        head->next->value = value;
-        head->next->next = NULL;
-        printf("插入成功");
-        return ;
-    }
-    linklist p = head->next;//保存插入节点前一个节点的地址。
-    head->next = (linklist)malloc(sizeof(NODE_T));
-    head->next->next = p;
-    head->next->value = value;
-    printf("插入成功");
+//struct node_t{
+//    int value;
+//    struct node_t * next;
+//};
+//typedef struct node_t NODE_T;
+//typedef struct node_t * linklist;
+//linklist create_list(int a[],int n){
+//    /*产生一个头节点*/
+//    linklist head = (linklist)malloc(sizeof(NODE_T));
+//    linklist p = head;
+//    int i = 0;
+//    for(i = 0;i<n;i++){ //产生 n个有效节点。
+//        p->next = (linklist)malloc(sizeof(NODE_T));
+//        p= p->next;
+//        p->value = a[i];//处理数据域。
+//        p->next= NULL;//确保尾节点指针域为空。
+//    }
+//    return head;
+//}
+//void tranverse_linklist(linklist h){
+//    while(h->next){
+//        h = h->next;
+//        printf("%d ",h->value);
+//    }
+//}
+//void release_ist(linklist  h){
+//    while(h->next){
+//        linklist q = h->next;
+//        /*拆下来首节点*/
+//        h->next = h->next->next;
+//        free(q);
+//    }
+//    free(h);//干掉头节点。
+//}
+//void add_one_data(linklist head) {
+//    int value = 0;
+//    printf("请输入您要插入的数。");
+//    scanf("%d",&value);
+//    while(head->next){
+//        if(head->next->value > value){
+//            break;
+//        }else{
+//            head = head->next;
+//        }
+//    }
+//    if(!head->next){//正常循环完毕，没有一个比这个数大。
+//        head->next = (linklist)malloc(sizeof(NODE_T));
+//        head->next->value = value;
+//        head->next->next = NULL;
+//        printf("插入成功");
+//        return ;
+//    }
+//    linklist p = head->next;//保存插入节点前一个节点的地址。
+//    head->next = (linklist)malloc(sizeof(NODE_T));
+//    head->next->next = p;
+//    head->next->value = value;
+//    printf("插入成功");
+//
+//}
+//int main(){
+//    int a[6] = {18,22,25,30,33,38};
+//    linklist head= (linklist)create_list(a,6);//返回头结点的地址
+//    tranverse_linklist(head);//遍历链表
+//    add_one_data(head);
+//    printf("插入后的结果。\n");
+//    tranverse_linklist(head);//遍历链表
+//    release_ist(head);
+//}
+/////测试github//////////////
+//
+//#include <stdio.h>
+//int main(){
+//    char * str[3] = {"abc","def","ghi"};
+//    str[1][1] = '5';
+//    *(str[1]+1) = '6';
+//    *(*(str+1)+1) = '7';
+//    printf("%s %s %s",str[0],str[1],str[2]);
+//    return 0;
+//}
 
+/*请问，以下程序有没有问题？没有问题，请输出结果
+ * 有问题，请指出问题？并改正（尽量少的改正步骤）。
+问题：内存泄漏，原因，形参的改变不会影响到实参。
+ * */
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+void fun(char ** str){
+    *str = (char *)malloc(30);
+    strcpy(*str,"ilovechina");
 }
 int main(){
-    int a[6] = {18,22,25,30,33,38};
-    linklist head= (linklist)create_list(a,6);//返回头结点的地址
-    tranverse_linklist(head);//遍历链表
-    add_one_data(head);
-    printf("插入后的结果。\n");
-    tranverse_linklist(head);//遍历链表
-    release_ist(head);
+    char * str = NULL;//要想改变主调函数指针变量的值，需要将指针变量的地址传递到被调用函数，
+    fun(&str);
+    printf("%s",str);
+    free(str);
+    str= NULL;
+    return 0;
 }
-/////测试github//////////////
