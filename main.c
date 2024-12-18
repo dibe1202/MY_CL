@@ -3612,15 +3612,60 @@ uxEventBits 是当前比特位的情况。
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-void fun(char ** str){
-    *str = (char *)malloc(30);
-    strcpy(*str,"ilovechina");
-}
-int main(){
-    char * str = NULL;//要想改变主调函数指针变量的值，需要将指针变量的地址传递到被调用函数，
-    fun(&str);
-    printf("%s",str);
-    free(str);
-    str= NULL;
-    return 0;
+//void fun(char ** str){
+//    *str = (char *)malloc(30);
+//    strcpy(*str,"ilovechina");
+//}
+//int main(){
+//    char * str = NULL;//要想改变主调函数指针变量的值，需要将指针变量的地址传递到被调用函数，
+//    fun(&str);
+//    printf("%s",str);
+//    free(str);
+//    str= NULL;
+//    return 0;
+//}
+
+//#include <stdio.h>
+//typedef struct  student{
+//    char  c ;
+//    double  d ;
+//    int  i ;
+//} stu1,stu2;
+//int main(){
+//    struct  student m[2] ={0};
+//    char * p  = (char *)&m[1];
+//    char * q = (char *)&m[0].i + 4;
+//    printf("%x %x",q,p);
+//}
+
+#include <stdio.h>
+
+struct date {
+    int year;
+    int month;
+    int day;
+};
+struct student {
+    long num;
+    char name[18];
+    char sex;
+    int score[2];
+    struct date birthday;
+};
+struct student stu1 = {
+        .birthday = {2000, 1, 15},
+        .score = {100, 80},
+        .name = "李彦宏",
+        .num = 10000
+};
+
+int main() {
+    printf("姓名：%s\n学号：%ld\n学分：%d %d\n生日：%d年%d月%d日",
+           stu1.name,
+           stu1.num,
+           stu1.score[0],
+           stu1.score[1],
+           stu1.birthday.year,
+           stu1.birthday.month,
+           stu1.birthday.day);
 }
