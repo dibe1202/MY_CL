@@ -3640,32 +3640,109 @@ uxEventBits 是当前比特位的情况。
 
 #include <stdio.h>
 
-struct date {
-    int year;
-    int month;
-    int day;
-};
-struct student {
-    long num;
-    char name[18];
-    char sex;
-    int score[2];
-    struct date birthday;
-};
-struct student stu1 = {
-        .birthday = {2000, 1, 15},
-        .score = {100, 80},
-        .name = "李彦宏",
-        .num = 10000
-};
+//struct date {
+//    int year;
+//    int month;
+//    int day;
+//};
+//struct student {
+//    long num;
+//    char name[18];
+//    char sex;
+//    int score[2];
+//    struct date birthday;
+//};
+//struct student stu1 = {
+//        .birthday = {2000, 1, 15},
+//        .score = {100, 80},
+//        .name = "李彦宏",
+//        .num = 10000
+//};
+//
+//int main() {
+//    printf("姓名：%s\n学号：%ld\n学分：%d %d\n生日：%d年%d月%d日",
+//           stu1.name,
+//           stu1.num,
+//           stu1.score[0],
+//           stu1.score[1],
+//           stu1.birthday.year,
+//           stu1.birthday.month,
+//           stu1.birthday.day);
+//}
 
-int main() {
-    printf("姓名：%s\n学号：%ld\n学分：%d %d\n生日：%d年%d月%d日",
-           stu1.name,
-           stu1.num,
-           stu1.score[0],
-           stu1.score[1],
-           stu1.birthday.year,
-           stu1.birthday.month,
-           stu1.birthday.day);
-}
+/*
+  关于文件名：
+  1，相对路径：相对于当前正在工作的路径。例如：.\\abc\\..\\..\\abc.txt
+             .\ 表示当前路径
+             .. 表示上一级路径。
+  2，绝对路径：从根目录开始指定。例如：d:\\abc\\a.txt
+关于文件打开模式：
+ w: 表示写（write)，文件如果不存在，产生一个文件，如果文件存在，
+    删除旧的文件，产生一个新文件，不能读，
+ r: 表示读(read)，文件如果不存在，打开失败。返回值为NULL,
+    如果文件存在，文件打开，返回FILE * 类型的指针,文件位置指针定位到文件开头
+ a: 表示附加方式(append),文件如果不存在，产生一个文件,如果文件存在，
+    打开它，文件位置指针定位到文件结尾
+
+ w+: 表示主要以写打开，文件如果不存在，产生一个文件，如果文件存在，
+    删除旧的文件，产生一个新文件。也可以读。
+ r+: 表示主要以读方式打开，文件如果不存在，打开失败。返回值为NULL,
+    如果文件存在，文件打开，返回FILE * 类型的指针,文件位置指针定位到文件开头，允许写。
+ a+: 表示附加方式(append)打开,文件如果不存在，产生一个文件,如果文件存在，
+    打开它，文件位置指针定位到文件结尾。也可以读。
+*/
+//int main(){
+//    FILE  * fp =  fopen(".\\abc\\..\\..\\abc.txt","w");
+//    if( fp == NULL){
+//        printf("打开文件失败。");
+//        return 0;
+//    }
+//    fputs("you are handsome boy!",fp);
+//    fclose(fp);
+//}
+#include <stdio.h>
+/*
+  关于文件名：
+  1，相对路径：相对于当前正在工作的路径。例如：.\\abc\\..\\..\\abc.txt
+             .\ 表示当前路径
+             .. 表示上一级路径。
+  2，绝对路径：从根目录开始指定。例如：d:\\abc\\a.txt
+关于文件打开模式：
+ w: 表示写（write)，文件如果不存在，产生一个文件，如果文件存在，
+    删除旧的文件，产生一个新文件，不能读，
+ r: 表示读(reae)，文件如果不存在，打开失败。返回值为NULL,
+    如果文件存在，文件打开，返回FILE * 类型的指针,文件位置指针定位到文件开头
+ a: 表示附加方式(append),文件如果不存在，产生一个文件,如果文件存在，
+    打开它，文件位置指针定位到文件结尾
+
+ w+: 表示主要以写打开，文件如果不存在，产生一个文件，如果文件存在，
+    删除旧的文件，产生一个新文件。也可以读。
+ r+: 表示主要以读方式打开，文件如果不存在，打开失败。返回值为NULL,
+    如果文件存在，文件打开，返回FILE * 类型的指针,文件位置指针定位到文件开头，允许写。
+ a+: 表示附加方式(append)打开,文件如果不存在，产生一个文件,如果文件存在，
+    打开它，文件位置指针定位到文件结尾。也可以读。
+ b：binary 二进制，坚决不能省略，t可以省略
+
+*/
+struct student_t{
+    char name[20];
+    char sex;
+    int age;
+};
+/*关于二进制文件的演示，fwrite,fread这两个函数专门用于二进制文件的读写。
+ * 其它即将要学的，都是处理文本文件的。*/
+//int main(){
+//    struct student_t one_students = {"wangxiaoer",'M',28};
+//    FILE  * fp =  fopen(".\\abc\\..\\..\\abc.bin","w+b");
+//    if( fp == NULL){
+//        printf("打开文件失败。");
+//        return 0;
+//    }
+//    fwrite(&one_students,sizeof(one_students),1,fp);
+//    fseek(fp,24,SEEK_SET);
+//    int age = 0;
+//    fread(&age,sizeof(int),1,fp);
+//    printf("%d",age);
+//    fclose(fp);
+//}
+

@@ -60,23 +60,41 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_Work: phony || CMakeFiles/Work.dir
 
-build CMakeFiles/Work.dir/main.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/cmake-build-debug/main.c || cmake_object_order_depends_target_Work
+build CMakeFiles/Work.dir/main.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/main.c || cmake_object_order_depends_target_Work
   DEP_FILE = CMakeFiles\Work.dir\main.c.obj.d
   FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Work.dir
   OBJECT_FILE_DIR = CMakeFiles\Work.dir
 
-build CMakeFiles/Work.dir/algorithm.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/cmake-build-debug/algorithm.c || cmake_object_order_depends_target_Work
+build CMakeFiles/Work.dir/algorithm.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/algorithm.c || cmake_object_order_depends_target_Work
   DEP_FILE = CMakeFiles\Work.dir\algorithm.c.obj.d
   FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Work.dir
   OBJECT_FILE_DIR = CMakeFiles\Work.dir
 
-build CMakeFiles/Work.dir/Learn_Demo/helloWorld.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/cmake-build-debug/Learn_Demo/helloWorld.c || cmake_object_order_depends_target_Work
-  DEP_FILE = CMakeFiles\Work.dir\Learn_Demo\helloWorld.c.obj.d
+build CMakeFiles/Work.dir/array.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/array.c || cmake_object_order_depends_target_Work
+  DEP_FILE = CMakeFiles\Work.dir\array.c.obj.d
   FLAGS = -g -std=gnu99
   OBJECT_DIR = CMakeFiles\Work.dir
-  OBJECT_FILE_DIR = CMakeFiles\Work.dir\Learn_Demo
+  OBJECT_FILE_DIR = CMakeFiles\Work.dir
+
+build CMakeFiles/Work.dir/linked_list.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/linked_list.c || cmake_object_order_depends_target_Work
+  DEP_FILE = CMakeFiles\Work.dir\linked_list.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\Work.dir
+  OBJECT_FILE_DIR = CMakeFiles\Work.dir
+
+build CMakeFiles/Work.dir/stack.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/stack.c || cmake_object_order_depends_target_Work
+  DEP_FILE = CMakeFiles\Work.dir\stack.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\Work.dir
+  OBJECT_FILE_DIR = CMakeFiles\Work.dir
+
+build CMakeFiles/Work.dir/Tree.c.obj: C_COMPILER__Work_Debug C$:/CLionProjects/Work/Tree.c || cmake_object_order_depends_target_Work
+  DEP_FILE = CMakeFiles\Work.dir\Tree.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\Work.dir
+  OBJECT_FILE_DIR = CMakeFiles\Work.dir
 
 
 # =============================================================================
@@ -86,7 +104,7 @@ build CMakeFiles/Work.dir/Learn_Demo/helloWorld.c.obj: C_COMPILER__Work_Debug C$
 #############################################
 # Link the executable Work.exe
 
-build Work.exe: C_EXECUTABLE_LINKER__Work_Debug CMakeFiles/Work.dir/main.c.obj CMakeFiles/Work.dir/algorithm.c.obj CMakeFiles/Work.dir/Learn_Demo/helloWorld.c.obj
+build Work.exe: C_EXECUTABLE_LINKER__Work_Debug CMakeFiles/Work.dir/main.c.obj CMakeFiles/Work.dir/algorithm.c.obj CMakeFiles/Work.dir/array.c.obj CMakeFiles/Work.dir/linked_list.c.obj CMakeFiles/Work.dir/stack.c.obj CMakeFiles/Work.dir/Tree.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Work.dir
