@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\CLionProjects\Work
+CMAKE_SOURCE_DIR = C:\Users\Administrator\CLionProjects\MY_CL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\CLionProjects\Work\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Administrator\CLionProjects\MY_CL\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\CLionProjects\Work\cmake-build-debug\CMakeFiles C:\CLionProjects\Work\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CLionProjects\MY_CL\cmake-build-debug\CMakeFiles C:\Users\Administrator\CLionProjects\MY_CL\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\CLionProjects\Work\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CLionProjects\MY_CL\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,29 +128,29 @@ Work/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/build
 .PHONY : Work/fast
 
-Learn_Demo/helloWorld.obj: Learn_Demo/helloWorld.c.obj
-.PHONY : Learn_Demo/helloWorld.obj
+Tree.obj: Tree.c.obj
+.PHONY : Tree.obj
 
 # target to build an object file
-Learn_Demo/helloWorld.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/Learn_Demo/helloWorld.c.obj
-.PHONY : Learn_Demo/helloWorld.c.obj
+Tree.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/Tree.c.obj
+.PHONY : Tree.c.obj
 
-Learn_Demo/helloWorld.i: Learn_Demo/helloWorld.c.i
-.PHONY : Learn_Demo/helloWorld.i
+Tree.i: Tree.c.i
+.PHONY : Tree.i
 
 # target to preprocess a source file
-Learn_Demo/helloWorld.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/Learn_Demo/helloWorld.c.i
-.PHONY : Learn_Demo/helloWorld.c.i
+Tree.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/Tree.c.i
+.PHONY : Tree.c.i
 
-Learn_Demo/helloWorld.s: Learn_Demo/helloWorld.c.s
-.PHONY : Learn_Demo/helloWorld.s
+Tree.s: Tree.c.s
+.PHONY : Tree.s
 
 # target to generate assembly for a file
-Learn_Demo/helloWorld.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/Learn_Demo/helloWorld.c.s
-.PHONY : Learn_Demo/helloWorld.c.s
+Tree.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/Tree.c.s
+.PHONY : Tree.c.s
 
 algorithm.obj: algorithm.c.obj
 .PHONY : algorithm.obj
@@ -176,6 +176,54 @@ algorithm.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/algorithm.c.s
 .PHONY : algorithm.c.s
 
+array.obj: array.c.obj
+.PHONY : array.obj
+
+# target to build an object file
+array.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/array.c.obj
+.PHONY : array.c.obj
+
+array.i: array.c.i
+.PHONY : array.i
+
+# target to preprocess a source file
+array.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/array.c.i
+.PHONY : array.c.i
+
+array.s: array.c.s
+.PHONY : array.s
+
+# target to generate assembly for a file
+array.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/array.c.s
+.PHONY : array.c.s
+
+linked_list.obj: linked_list.c.obj
+.PHONY : linked_list.obj
+
+# target to build an object file
+linked_list.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/linked_list.c.obj
+.PHONY : linked_list.c.obj
+
+linked_list.i: linked_list.c.i
+.PHONY : linked_list.i
+
+# target to preprocess a source file
+linked_list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/linked_list.c.i
+.PHONY : linked_list.c.i
+
+linked_list.s: linked_list.c.s
+.PHONY : linked_list.s
+
+# target to generate assembly for a file
+linked_list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/linked_list.c.s
+.PHONY : linked_list.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -200,6 +248,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/main.c.s
 .PHONY : main.c.s
 
+stack.obj: stack.c.obj
+.PHONY : stack.obj
+
+# target to build an object file
+stack.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/stack.c.obj
+.PHONY : stack.c.obj
+
+stack.i: stack.c.i
+.PHONY : stack.i
+
+# target to preprocess a source file
+stack.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/stack.c.i
+.PHONY : stack.c.i
+
+stack.s: stack.c.s
+.PHONY : stack.s
+
+# target to generate assembly for a file
+stack.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Work.dir\build.make CMakeFiles/Work.dir/stack.c.s
+.PHONY : stack.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -209,15 +281,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Work
-	@echo ... Learn_Demo/helloWorld.obj
-	@echo ... Learn_Demo/helloWorld.i
-	@echo ... Learn_Demo/helloWorld.s
+	@echo ... Tree.obj
+	@echo ... Tree.i
+	@echo ... Tree.s
 	@echo ... algorithm.obj
 	@echo ... algorithm.i
 	@echo ... algorithm.s
+	@echo ... array.obj
+	@echo ... array.i
+	@echo ... array.s
+	@echo ... linked_list.obj
+	@echo ... linked_list.i
+	@echo ... linked_list.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... stack.obj
+	@echo ... stack.i
+	@echo ... stack.s
 .PHONY : help
 
 
